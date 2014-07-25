@@ -882,7 +882,7 @@ fu! s:Utl_checkHeuristicAbsUrl(uri)
 	return 'http://' . a:uri
 
     "--- user@host.domain -> mailto:user@host.domain
-    elseif match(a:uri, '@') != -1
+    elseif match(a:uri, '[:alnum:]\+@[:alnum:]\+') != -1
 	return 'mailto:' . a:uri
 
     "--- :xxx  -> vimscript::xxx
